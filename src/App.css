@@ -1,38 +1,243 @@
-.App {
-  text-align: center;
-}
+/* ═══════════════════════════════════════════════════════════════════════
+   🦇 APP COMPONENT STYLES - Gothic Theme 🦇
+   ══════════════════════════════════════════════════════════════════════ */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* ─── App Container ──────────────────────────────────────────────────── */
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-2xl);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────── */
+.app-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-xl);
+  position: relative;
+}
+
+.app-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blood-red), transparent);
+}
+
+.app-header h1 {
+  margin-bottom: var(--space-md);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.app-subtitle {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+/* ─── Main Content ───────────────────────────────────────────────────── */
+.app-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--space-2xl);
+  flex: 1;
+  animation: fadeIn 0.6s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+@media (max-width: 900px) {
+  .app-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Panels ─────────────────────────────────────────────────────────── */
+.panel {
+  background: var(--gradient-surface);
+  border: 1px solid var(--gothic-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-normal);
+}
+
+.panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-blood);
+}
+
+.panel::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(180deg, rgba(139, 0, 0, 0.05) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.panel:hover {
+  border-color: var(--blood-red);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────────── */
+.app-footer {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  text-align: center;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: var(--space-md);
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.app-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gothic-border), transparent);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.footer-ornament {
+  color: var(--blood-red);
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+/* ─── Component Specific Enhancements ────────────────────────────────── */
+
+/* Input Groups */
+.panel>div>div:first-child {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  align-items: center;
+  flex-wrap: wrap;
+  padding: var(--space-md);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(58, 58, 74, 0.5);
+}
+
+.panel>div>div:first-child input {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Section Headers */
+.panel h2 {
+  margin-bottom: var(--space-lg);
+  position: relative;
+  display: inline-block;
+}
+
+.panel h2::before {
+  content: '✧';
+  margin-right: var(--space-sm);
+  color: var(--blood-red);
+  font-size: 0.8em;
+}
+
+/* Table Enhancements */
+.panel table {
+  margin-top: var(--space-md);
+}
+
+/* List Enhancements */
+.panel>div>ul {
+  margin-top: var(--space-md);
+}
+
+/* ─── Responsive Adjustments ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .app-container {
+    padding: var(--space-lg);
   }
-  to {
-    transform: rotate(360deg);
+
+  .app-header h1 {
+    font-size: 1.8rem;
   }
+
+  .panel {
+    padding: var(--space-lg);
+  }
+
+  .panel>div>div:first-child {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .panel>div>div:first-child input {
+    width: 100%;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
+/* ─── Decorative Elements ────────────────────────────────────────────── */
+
+/* Corner Ornaments for Panels */
+.panel .corner-ornament {
+  position: absolute;
+  font-size: 1.5rem;
+  color: var(--blood-red);
+  opacity: 0.3;
+}
+
+.panel .corner-ornament.top-left {
+  top: var(--space-md);
+  left: var(--space-md);
+}
+
+.panel .corner-ornament.top-right {
+  top: var(--space-md);
+  right: var(--space-md);
+}
+
+.panel .corner-ornament.bottom-left {
+  bottom: var(--space-md);
+  left: var(--space-md);
+}
+
+.panel .corner-ornament.bottom-right {
+  bottom: var(--space-md);
+  right: var(--space-md);
 }
