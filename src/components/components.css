@@ -1,264 +1,103 @@
-/* ═══════════════════════════════════════════════════════════════════════
-   🦇 COMPONENT STYLES - Gothic Theme 🦇
-   ══════════════════════════════════════════════════════════════════════ */
+/* Shared Component Styles */
 
-/* ─── Shared Component Styles ────────────────────────────────────────── */
-
-/* Input Groups */
 .input-group {
     display: flex;
-    gap: var(--space-md);
-    margin-bottom: var(--space-xl);
+    gap: 1rem;
+    margin-bottom: 2rem;
     align-items: center;
     flex-wrap: wrap;
-    padding: var(--space-md);
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: var(--radius-md);
-    border: 1px solid rgba(58, 58, 74, 0.5);
 }
 
-.input-group input {
-    flex: 1;
-    min-width: 150px;
-}
-
-/* Button Variants */
 .btn-primary {
-    background: var(--gradient-blood);
-    border-color: var(--blood-bright);
-}
-
-.btn-primary:hover {
-    box-shadow: var(--shadow-glow);
+    background: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
 }
 
 .btn-secondary {
     background: transparent;
-    border-color: var(--gothic-border);
-    color: var(--text-secondary);
-    padding: var(--space-xs) var(--space-md);
-    font-size: 0.75rem;
-}
-
-.btn-secondary:hover {
-    border-color: var(--silver-mist);
-    color: var(--moonlight);
-    background: rgba(192, 192, 192, 0.1);
-    box-shadow: none;
+    border: 1px solid var(--border);
+    color: var(--text);
 }
 
 .btn-danger {
     background: transparent;
-    border-color: var(--blood-red);
-    color: var(--blood-bright);
-    padding: var(--space-xs) var(--space-md);
-    font-size: 0.75rem;
+    border: 1px solid #ef4444;
+    color: #ef4444;
 }
 
 .btn-danger:hover {
-    background: var(--blood-red);
-    color: var(--moonlight);
+    background: #ef4444;
+    color: white;
 }
 
-/* Empty States */
 .empty-state {
     text-align: center;
-    padding: var(--space-2xl) !important;
-    color: var(--text-muted);
-    font-style: italic;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
-    background: transparent !important;
-    border-left: none !important;
-}
-
-.empty-icon {
-    font-size: 2.5rem;
-    opacity: 0.5;
-    color: var(--blood-red);
-}
-
-/* Action Button Groups */
-.action-buttons {
-    display: flex;
-    gap: var(--space-sm);
-    flex-wrap: wrap;
-}
-
-/* Text Utilities */
-.text-gold {
-    color: var(--candle-gold) !important;
-    font-weight: 600;
-    font-family: var(--font-display);
-    letter-spacing: 0.1em;
-}
-
-.text-muted {
-    color: var(--text-muted) !important;
-    font-size: 0.9em;
+    padding: 3rem;
+    color: var(--muted);
 }
 
 .notes-display {
-    font-family: 'Courier New', monospace;
-    font-size: 0.85rem;
-    color: var(--silver-mist);
-    background: rgba(0, 0, 0, 0.3);
-    padding: var(--space-xs) var(--space-sm);
-    border-radius: var(--radius-sm);
-}
-
-/* ─── Kolmkolad Section ──────────────────────────────────────────────── */
-.kolmkolad-section h2::before {
-    content: '♬';
-}
-
-/* ─── Lood Section ───────────────────────────────────────────────────── */
-.lood-section h2::before {
-    content: '♪';
-}
-
-/* Songs List */
-.songs-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
+    font-family: monospace;
+    font-size: 0.9rem;
+    background: var(--surface);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
 }
 
 .song-item {
-    padding: var(--space-lg) !important;
-    background: linear-gradient(135deg, var(--gothic-surface) 0%, var(--gothic-dark) 100%) !important;
-    border: 1px solid var(--gothic-border);
-    border-left: 4px solid var(--blood-red) !important;
-    border-radius: var(--radius-md) !important;
-    transition: var(--transition-normal);
-}
-
-.song-item:hover {
-    border-color: var(--blood-bright);
-    transform: translateX(4px);
-    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: white;
+    margin-bottom: 1rem;
 }
 
 .song-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: var(--space-md);
-}
-
-.song-title {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
+    align-items: center;
 }
 
 .song-title strong {
-    font-size: 1.1rem;
-    color: var(--moonlight);
-    font-family: var(--font-display);
-    letter-spacing: 0.05em;
+    font-size: 1.25rem;
+    color: var(--text);
 }
 
 .song-id {
+    color: var(--muted);
     font-size: 0.8rem;
-    color: var(--text-muted);
-    font-style: italic;
-}
-
-.song-actions {
-    display: flex;
-    gap: var(--space-sm);
-    flex-wrap: wrap;
-}
-
-/* Taktid Section */
-.taktid-section {
-    margin-top: var(--space-lg);
-    padding-top: var(--space-md);
-    border-top: 1px solid var(--gothic-border);
-}
-
-.taktid-label {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    display: block;
-    margin-bottom: var(--space-sm);
 }
 
 .taktid-list {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-sm);
+    gap: 0.5rem;
     list-style: none;
-    counter-reset: takt-counter;
+    margin-top: 1rem;
 }
 
 .takt-item {
-    background: rgba(139, 0, 0, 0.2) !important;
-    border: 1px solid var(--blood-red) !important;
-    border-left: 1px solid var(--blood-red) !important;
-    border-radius: var(--radius-sm) !important;
-    padding: var(--space-xs) var(--space-md) !important;
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
-    margin-bottom: 0 !important;
-    transform: none !important;
-    counter-increment: takt-counter;
-}
-
-.takt-item::before {
-    content: counter(takt-counter) ".";
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    margin-right: var(--space-xs);
-}
-
-.takt-item:hover {
-    background: rgba(139, 0, 0, 0.4) !important;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
 }
 
 .chord-name {
-    color: var(--candle-gold);
     font-weight: 600;
-    font-family: var(--font-display);
-    letter-spacing: 0.1em;
+    color: var(--text);
+    /* Changed from gold to black */
 }
 
 .chord-tone {
-    color: var(--text-muted);
-    font-size: 0.85rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-left: 0.25rem;
 }
 
-/* ─── Responsive ─────────────────────────────────────────────────────── */
-@media (max-width: 600px) {
-    .input-group {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .input-group input {
-        width: 100%;
-    }
-
-    .song-header {
-        flex-direction: column;
-    }
-
-    .song-actions {
-        width: 100%;
-        justify-content: flex-start;
-    }
-
-    .action-buttons {
-        width: 100%;
-    }
-
-    .action-buttons button {
-        flex: 1;
-        text-align: center;
-    }
+.chord-notes {
+    margin-left: 0.5rem;
+    color: var(--muted);
+    font-size: 0.9em;
 }

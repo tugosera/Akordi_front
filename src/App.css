@@ -1,61 +1,18 @@
-/* ═══════════════════════════════════════════════════════════════════════
-   🦇 APP COMPONENT STYLES - Gothic Theme 🦇
-   ══════════════════════════════════════════════════════════════════════ */
-
-/* ─── App Container ──────────────────────────────────────────────────── */
 .app-container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: var(--space-2xl);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  padding: 2rem;
 }
 
-/* ─── Header ─────────────────────────────────────────────────────────── */
 .app-header {
   text-align: center;
-  margin-bottom: var(--space-2xl);
-  padding-bottom: var(--space-xl);
-  position: relative;
+  margin-bottom: 3rem;
 }
 
-.app-header::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--blood-red), transparent);
-}
-
-.app-header h1 {
-  margin-bottom: var(--space-md);
-  animation: fadeIn 0.8s ease forwards;
-}
-
-.app-subtitle {
-  color: var(--text-muted);
-  font-style: italic;
-  font-size: 1.1rem;
-  max-width: 500px;
-  margin: 0 auto;
-  animation: fadeIn 1s ease forwards;
-  animation-delay: 0.2s;
-  opacity: 0;
-}
-
-/* ─── Main Content ───────────────────────────────────────────────────── */
 .app-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: var(--space-2xl);
-  flex: 1;
-  animation: fadeIn 0.6s ease forwards;
-  animation-delay: 0.3s;
-  opacity: 0;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
 }
 
 @media (max-width: 900px) {
@@ -64,180 +21,42 @@
   }
 }
 
-/* ─── Panels ─────────────────────────────────────────────────────────── */
 .panel {
-  background: var(--gradient-surface);
-  border: 1px solid var(--gothic-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-  position: relative;
-  overflow: hidden;
-  transition: var(--transition-normal);
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
 }
 
-.panel::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-blood);
-}
-
-.panel::after {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: linear-gradient(180deg, rgba(139, 0, 0, 0.05) 0%, transparent 100%);
-  pointer-events: none;
-}
-
-.panel:hover {
-  border-color: var(--blood-red);
-  box-shadow: var(--shadow-glow);
-  transform: translateY(-2px);
-}
-
-/* ─── Footer ─────────────────────────────────────────────────────────── */
 .app-footer {
-  margin-top: var(--space-2xl);
-  padding-top: var(--space-xl);
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
   text-align: center;
-  color: var(--text-muted);
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.input-group {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
-  position: relative;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.app-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 300px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gothic-border), transparent);
-}
-
-.footer-ornament {
-  color: var(--blood-red);
-  font-size: 1.2rem;
-  opacity: 0.7;
-}
-
-/* ─── Component Specific Enhancements ────────────────────────────────── */
-
-/* Input Groups */
-.panel>div>div:first-child {
-  display: flex;
-  gap: var(--space-md);
-  margin-bottom: var(--space-xl);
-  align-items: center;
-  flex-wrap: wrap;
-  padding: var(--space-md);
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(58, 58, 74, 0.5);
-}
-
-.panel>div>div:first-child input {
+.input-group input {
   flex: 1;
-  min-width: 150px;
 }
 
-/* Section Headers */
-.panel h2 {
-  margin-bottom: var(--space-lg);
-  position: relative;
-  display: inline-block;
+#root>div>div:last-child {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.panel h2::before {
-  content: '✧';
-  margin-right: var(--space-sm);
-  color: var(--blood-red);
-  font-size: 0.8em;
-}
-
-/* Table Enhancements */
-.panel table {
-  margin-top: var(--space-md);
-}
-
-/* List Enhancements */
-.panel>div>ul {
-  margin-top: var(--space-md);
-}
-
-/* ─── Responsive Adjustments ─────────────────────────────────────────── */
-@media (max-width: 600px) {
-  .app-container {
-    padding: var(--space-lg);
-  }
-
-  .app-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .panel {
-    padding: var(--space-lg);
-  }
-
-  .panel>div>div:first-child {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .panel>div>div:first-child input {
-    width: 100%;
-  }
-
-  table {
-    font-size: 0.9rem;
-  }
-
-  th,
-  td {
-    padding: var(--space-sm) var(--space-md);
-  }
-}
-
-/* ─── Decorative Elements ────────────────────────────────────────────── */
-
-/* Corner Ornaments for Panels */
-.panel .corner-ornament {
-  position: absolute;
-  font-size: 1.5rem;
-  color: var(--blood-red);
-  opacity: 0.3;
-}
-
-.panel .corner-ornament.top-left {
-  top: var(--space-md);
-  left: var(--space-md);
-}
-
-.panel .corner-ornament.top-right {
-  top: var(--space-md);
-  right: var(--space-md);
-}
-
-.panel .corner-ornament.bottom-left {
-  bottom: var(--space-md);
-  left: var(--space-md);
-}
-
-.panel .corner-ornament.bottom-right {
-  bottom: var(--space-md);
-  right: var(--space-md);
+#root>div>div:last-child>div {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: white;
 }
